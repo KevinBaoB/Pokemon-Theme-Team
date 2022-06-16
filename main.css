@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Pokemon";
+  src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot");
+  src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon")
+      format("svg");
+}
+
+body {
+  background: url("Pokemon2.webp") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.col.poke {
+  background-color: beige;
+  border: 5px solid rgb(116, 26, 26);
+  border-radius: 50%;
+  text-align: center;
+  margin-top: 15rem;
+  font-family: "Pokemon";
+}
+
+.btn.submission {
+  background-color: silver;
+}
+
+.btn.submission:hover {
+  cursor: pointer;
+  background-color: beige;
+}
+
+.col.describe {
+  color: beige;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  font-size: 5rem;
+  font-family: "Pokemon";
+}
+
+.col img {
+  width: 10rem;
+}
+
+.input-group.mb-3 {
+  left: 25rem;
+  align-content: center;
+  width: 30rem;
+}
