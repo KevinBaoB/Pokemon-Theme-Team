@@ -30,8 +30,6 @@
 //   //   console.log(typeResponse);
 // };
 
-// getMon();
-let count = 0;
 document.querySelector(".submission").addEventListener("click", function () {
   let input = document.querySelector(".input-type").value;
 
@@ -39,14 +37,14 @@ document.querySelector(".submission").addEventListener("click", function () {
     for (let i = 1; i <= 6; i++) {
       let response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${
-          Math.trunc(Math.random() * 151) + 1
+          Math.trunc(Math.random() * 700) + 1
         }/`
       );
       let pokeType = response.data.types[0].type.name;
       while (pokeType !== input) {
         response = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${
-            Math.trunc(Math.random() * 151) + 1
+            Math.trunc(Math.random() * 700) + 1
           }/`
         );
         pokeType = response.data.types[0].type.name;
@@ -54,14 +52,18 @@ document.querySelector(".submission").addEventListener("click", function () {
       console.log(pokeType);
       const sprite = response.data.sprites["front_default"];
       //   console.log(sprite);
+
       const image = document.createElement("img");
+      image.classList.add(`poker_${i}`);
       image.src = sprite;
 
-      //   if (count < 7) {
-      document.querySelector(`.poke_${i}`).appendChild(image);
-      //     count++;
-      //   } else {
-      //     document.querySelector(`.poke_${i}`).removeChild(image);
+      let pokemon = document.querySelector(`.poke_${i}`);
+      //   let div = document.querySelector("div");
+      //   div.classList.remove("img-responsive");
+      pokemon.removeChild(pokemon.childNodes[0]);
+
+      pokemon.appendChild(image);
+
       //   }
     }
 
