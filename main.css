@@ -21,11 +21,11 @@ body {
   background-size: cover;
 }
 
-.col.poke {
+img.poke {
   background-color: beige;
   border: 5px solid rgb(116, 26, 26);
-  width: 200px;
-  height: 200px;
+  width: auto;
+  height: auto;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -36,6 +36,8 @@ body {
 
 .btn.submission {
   background-color: silver;
+  display: flex;
+  justify-content: center;
 }
 
 .btn.submission:hover {
@@ -57,7 +59,14 @@ body {
 }
 
 .input-group.mb-3 {
-  left: 25rem;
-  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-self: center;
   width: 30rem;
+}
+
+div.description {
+  background-color: beige;
+  border: 2px solid rgb(116, 26, 26);
+  border-radius: 5px;
 }

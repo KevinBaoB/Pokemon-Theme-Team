@@ -31,20 +31,48 @@
 // };
 
 document.querySelector(".submission").addEventListener("click", function () {
-  let input = document.querySelector(".input-type").value;
+  // let input = document.querySelector(".input-type").value;
+  const pokeList = [
+    "normal",
+    "fire",
+    "water",
+    "grass",
+    "electric",
+    "ice",
+    "fighting",
+    "poison",
+    "ground",
+    "flying",
+    "psychic",
+    "bug",
+    "rock",
+    "ghost",
+    "dragon",
+    "steel",
+    "fairy",
+  ];
+
+  let randomType = pokeList[Math.trunc(Math.random() * pokeList.length)];
+  console.log(randomType);
+
+  function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
 
   const getMon = async () => {
     for (let i = 1; i <= 6; i++) {
       let response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${
-          Math.trunc(Math.random() * 700) + 1
+          Math.trunc(Math.random() * 898) + 1
         }/`
       );
       let pokeType = response.data.types[0].type.name;
-      while (pokeType !== input) {
+      while (pokeType !== randomType) {
         response = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${
-            Math.trunc(Math.random() * 700) + 1
+            Math.trunc(Math.random() * 898) + 1
           }/`
         );
         pokeType = response.data.types[0].type.name;
@@ -56,19 +84,19 @@ document.querySelector(".submission").addEventListener("click", function () {
       const image = document.createElement("img");
       image.classList.add(`poker_${i}`);
       image.src = sprite;
+      image.classList.add("poke");
+      const description = document.createElement("div");
+      description.classList.add("description");
+
+      description.textContent = `${response.data.name}`;
 
       let pokemon = document.querySelector(`.poke_${i}`);
-      //   let div = document.querySelector("div");
-      //   div.classList.remove("img-responsive");
-      pokemon.removeChild(pokemon.childNodes[0]);
+
+      removeAllChildNodes(pokemon);
 
       pokemon.appendChild(image);
-
-      //   }
+      pokemon.appendChild(description);
     }
-
-    //   const typeResponse = await axios.get(typeUrl);
-    //   console.log(typeResponse);
   };
   getMon();
 });
