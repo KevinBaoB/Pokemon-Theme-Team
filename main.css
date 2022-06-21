@@ -21,6 +21,14 @@ body {
   background-size: cover;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 img.poke {
   background-color: beige;
   border: 5px solid rgb(116, 26, 26);
@@ -35,9 +43,10 @@ img.poke {
 }
 
 .btn.submission {
-  background-color: silver;
+  background-color: beige;
   display: flex;
   justify-content: center;
+  font-family: "Pokemon";
 }
 
 .btn.submission:hover {
@@ -69,4 +78,5 @@ div.description {
   background-color: beige;
   border: 2px solid rgb(116, 26, 26);
   border-radius: 5px;
+  font-family: "Pokemon";
 }
